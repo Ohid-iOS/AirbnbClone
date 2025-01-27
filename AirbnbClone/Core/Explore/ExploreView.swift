@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    @State private var GoToDestinationSearchView = false
     var body: some View {
+        
         NavigationStack {
-            VStack {
+            
+            if GoToDestinationSearchView{
+                DestinationSearchView(isPresented: $GoToDestinationSearchView)
+            }else{
                 
                 ScrollView {
                     SearchAndFilterbar()
-                    LazyVStack(spacing: 30) {
-                        ForEach(0...10, id: \.self) { listing in
+                        .onTapGesture {
+                            withAnimation(.snappy) {
+                                GoToDestinationSearchView.toggle()
+                            }
+                        }
+                    
+                    
+                    LazyVStack(spacing: 32) {
+                        ForEach(0 ... 10, id: \.self) { listing in
                             NavigationLink(value: listing) {
                                 ListingItemsView()
+                                    .frame(height: 400)
                                     .cornerRadius(10)
                             }
                         }
                     }
                     .padding()
                 }
-            }
-            //.navigationTitle("Explore")
-            .navigationDestination(for: Int.self) { listingID in
-                Text(" go to details")
+                .navigationDestination(for: Int.self) { listingID in
+                    ListingDetailsView()
+                        .navigationBarHidden(true) // Hides the back button
+                }
+
             }
         }
     }
@@ -36,3 +51,4 @@ struct ExploreView: View {
 #Preview {
     ExploreView()
 }
+

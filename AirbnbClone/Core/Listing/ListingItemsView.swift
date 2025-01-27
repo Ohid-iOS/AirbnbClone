@@ -62,31 +62,16 @@
 import SwiftUI
 
 struct ListingItemsView: View {
-    
-    var Images = [
-        "hotel1",
-        "hotel2",
-        "hotel3",
-        "hotel4",
-    ]
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Image carousel
-            TabView {
-                ForEach(Images, id: \.self) { image in
-                    Image(image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 320)
-                        .clipped()
-                }
-            }
+            ListingImageView()
             .cornerRadius(10)
-            .tabViewStyle(.page(indexDisplayMode: .automatic))
             .frame(height: 320)
             
             // Listing details
+            HStack(alignment: .top){
             VStack(alignment: .leading, spacing: 8) {
                 Text("Miami, Florida")
                     .font(.headline)
@@ -120,6 +105,7 @@ struct ListingItemsView: View {
                         .fontWeight(.semibold)
                 }
             }
+        }
         }
 //        .padding()
 //        .background(Color.white)
