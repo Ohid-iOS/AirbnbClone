@@ -29,7 +29,7 @@ struct ProfileView: View {
                         .background(.pink)
                         .cornerRadius(8)
                 }
-                
+                  
                 HStack{
                     Text("Don't have an account?")
                         .font(.subheadline)
