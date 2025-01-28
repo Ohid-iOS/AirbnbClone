@@ -4,61 +4,7 @@
 //
 //  Created by MacMini6 on 24/01/25.
 //
-//
-//import SwiftUI
-//
-//struct ListingItemsView: View {
-//    
-//    var Images = [
-//        "hotel1",
-//        "hotel2",
-//        "hotel3",
-//        "hotel4",
-//    ]
-//    
-//    var body: some View {
-//        //image
-//        VStack(spacing: 8){
-//            TabView {
-//                ForEach(Images, id: \.self) { images in
-//                    Image(images)
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                }
-//            }
-//            .frame(height:320)
-//            .cornerRadius(10)
-//            .tabViewStyle(.page)
-//        }
-//        //listing items
-//        HStack(alignment: .top){
-//            VStack(alignment: .leading){
-//                Text("Miami, Florida")
-//                    .fontWeight(.semibold)
-//                Text("12 mint away")
-//                    .foregroundStyle(.gray)
-//                Text("Nov, 3 - 10")
-//                    .foregroundStyle(.gray)
-//                HStack{
-//                    Text("$567")
-//                        .fontWeight(.semibold)
-//                    Text("Night")
-//                }
-//            }
-//            Spacer()
-//            
-//            HStack{
-//                Text(Image(systemName: "star.fill"))
-//                Text("4.88")
-//            }
-//        }.font(.footnote)
-//
-//    }
-//}
-//
-//#Preview {
-//    ListingItemsView()
-//}
+
 import SwiftUI
 
 struct ListingItemsView: View {
@@ -76,6 +22,7 @@ struct ListingItemsView: View {
                 Text("Miami, Florida")
                     .font(.headline)
                     .fontWeight(.bold)
+                    .foregroundStyle(.black)
                 
                 Text("12 minutes away")
                     .foregroundColor(.gray)
@@ -92,9 +39,7 @@ struct ListingItemsView: View {
                         .font(.subheadline)
                 }
             }
-            
             Spacer()
-            
             // Rating
             HStack{
                 Spacer()
@@ -103,6 +48,7 @@ struct ListingItemsView: View {
                         .foregroundColor(.yellow)
                     Text("4.88")
                         .fontWeight(.semibold)
+                        .foregroundStyle(.black)
                 }
             }
         }

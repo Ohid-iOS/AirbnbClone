@@ -27,7 +27,7 @@ struct TabbarView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-        }
+        }.tint(.pink)
     }
 }
 
