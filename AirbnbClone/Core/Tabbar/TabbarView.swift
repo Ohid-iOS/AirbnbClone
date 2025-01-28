@@ -19,7 +19,7 @@ struct TabbarView: View {
             WishListView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("Whishlist")
+                    Text("Whishlists")
                 }
             
             ProfileView()
